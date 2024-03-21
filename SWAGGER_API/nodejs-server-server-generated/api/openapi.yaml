@@ -1,0 +1,284 @@
+openapi: 3.0.0
+info:
+  title: TVET College Web App API
+  version: 1.0.0
+servers:
+- url: https://virtserver.swaggerhub.com/BSCNRB595022/test/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  /users:
+    get:
+      summary: Retrieve a list of users
+      operationId: usersGET
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new user
+      operationId: usersPOST
+      responses:
+        "201":
+          description: Created
+      x-swagger-router-controller: Default
+  /users/{user_id}:
+    get:
+      summary: Retrieve a specific user
+      operationId: usersUser_idGET
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a specific user
+      operationId: usersUser_idPUT
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a specific user
+      operationId: usersUser_idDELETE
+      parameters:
+      - name: user_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+  /locations:
+    get:
+      summary: Retrieve a list of locations
+      operationId: locationsGET
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new location
+      operationId: locationsPOST
+      responses:
+        "201":
+          description: Created
+      x-swagger-router-controller: Default
+  /locations/{location_id}:
+    get:
+      summary: Retrieve a specific location
+      operationId: locationsLocation_idGET
+      parameters:
+      - name: location_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a specific location
+      operationId: locationsLocation_idPUT
+      parameters:
+      - name: location_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a specific location
+      operationId: locationsLocation_idDELETE
+      parameters:
+      - name: location_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+  /shops:
+    get:
+      summary: Retrieve a list of shops
+      operationId: shopsGET
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new shop
+      operationId: shopsPOST
+      responses:
+        "201":
+          description: Created
+      x-swagger-router-controller: Default
+  /shops/{shop_id}:
+    get:
+      summary: Retrieve a specific shop
+      operationId: shopsShop_idGET
+      parameters:
+      - name: shop_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a specific shop
+      operationId: shopsShop_idPUT
+      parameters:
+      - name: shop_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a specific shop
+      operationId: shopsShop_idDELETE
+      parameters:
+      - name: shop_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+  /products:
+    get:
+      summary: Retrieve a list of products
+      operationId: productsGET
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new product
+      operationId: productsPOST
+      responses:
+        "201":
+          description: Created
+      x-swagger-router-controller: Default
+  /products/{product_id}:
+    get:
+      summary: Retrieve a specific product
+      operationId: productsProduct_idGET
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    put:
+      summary: Update a specific product
+      operationId: productsProduct_idPUT
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    delete:
+      summary: Delete a specific product
+      operationId: productsProduct_idDELETE
+      parameters:
+      - name: product_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+  /transactions:
+    get:
+      summary: Retrieve a list of transactions
+      operationId: transactionsGET
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+    post:
+      summary: Create a new transaction
+      operationId: transactionsPOST
+      responses:
+        "201":
+          description: Created
+      x-swagger-router-controller: Default
+  /transactions/{transaction_id}:
+    get:
+      summary: Retrieve a specific transaction
+      operationId: transactionsTransaction_idGET
+      parameters:
+      - name: transaction_id
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: integer
+      responses:
+        "200":
+          description: Success
+      x-swagger-router-controller: Default
+components: {}
