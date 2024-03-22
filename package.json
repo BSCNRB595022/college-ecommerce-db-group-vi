@@ -1,8 +1,9 @@
 {
   "dependencies": {
     "express": "^4.19.1",
+    "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.3",
-    "swagger": "^0.7.5",
+    "swagger": "^0.0.1",
     "swagger-ui-express": "^5.0.0"
   }
 }
