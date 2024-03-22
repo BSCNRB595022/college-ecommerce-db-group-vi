@@ -13,16 +13,16 @@ TRUNCATE transactions RESTART IDENTITY CASCADE;
 -- Insert data into the users table
 INSERT INTO users (name, email, password_hash, role)
 VALUES
-    ('Juma Wangari', 'juma.wangari@example.com', 'hashedpassword1', 'student'),
-    ('Atieno Odhiambo', 'atieno.odhiambo@example.com', 'hashedpassword2', 'staff'),
-    ('Kamau Kinyanjui', 'kamau.kinyanjui@example.com', 'hashedpassword3', 'admin'),
-    ('Fatuma Ali', 'fatuma.ali@example.com', 'hashedpassword4', 'student'),
-    ('Omondi Onyango', 'omondi.onyango@example.com', 'hashedpassword5', 'staff'),
-    ('Njeri Muthoni', 'njeri.muthoni@example.com', 'hashedpassword6', 'student'),
-    ('Kwame Owino', 'kwame.owino@example.com', 'hashedpassword7', 'staff'),
-    ('Amina Hassan', 'amina.hassan@example.com', 'hashedpassword8', 'student'),
-    ('Abdalla Mwangi', 'abdalla.mwangi@example.com', 'hashedpassword9', 'admin'),
-    ('Aisha Ndungu', 'aisha.ndungu@example.com', 'hashedpassword10', 'staff');
+    ('Juma Wangari', 'juma.wangari@spu.ac.ke', 'hashedpassword1', 'student'),
+    ('Atieno Odhiambo', 'atieno.odhiambo@spu.ac.ke', 'hashedpassword2', 'staff'),
+    ('Kamau Kinyanjui', 'kamau.kinyanjui@spu.ac.ke', 'hashedpassword3', 'admin'),
+    ('Fatuma Ali', 'fatuma.ali@spu.ac.ke', 'hashedpassword4', 'student'),
+    ('Omondi Onyango', 'omondi.onyango@spu.ac.ke', 'hashedpassword5', 'staff'),
+    ('Njeri Muthoni', 'njeri.muthoni@spu.ac.ke', 'hashedpassword6', 'student'),
+    ('Kwame Owino', 'kwame.owino@spu.ac.ke', 'hashedpassword7', 'staff'),
+    ('Amina Hassan', 'amina.hassan@spu.ac.ke', 'hashedpassword8', 'student'),
+    ('Abdalla Mwangi', 'abdalla.mwangi@spu.ac.ke', 'hashedpassword9', 'admin'),
+    ('Aisha Ndungu', 'aisha.ndungu@spu.ac.ke', 'hashedpassword10', 'staff');
 
 -- Insert data into the locations table
 INSERT INTO locations (name, address)
