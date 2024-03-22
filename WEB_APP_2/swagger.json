@@ -1,376 +1,598 @@
 {
-  "openapi": "3.0.0",
-  "info": {
-    "title": "TVET College Web App API",
-    "version": "1.0.0"
-  },
-  "servers": [
-    {
-      "url": "https://virtserver.swaggerhub.com/BSCNRB595022/test/1.0.0",
-      "description": "SwaggerHub API Auto Mocking"
-    }
-  ],
-  "paths": {
-    "/users": {
-      "get": {
-        "summary": "Retrieve a list of users",
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a new user",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
-    "/users/{user_id}": {
-      "get": {
-        "summary": "Retrieve a specific user",
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a specific user",
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a specific user",
-        "parameters": [
-          {
-            "name": "user_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/locations": {
-      "get": {
-        "summary": "Retrieve a list of locations",
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a new location",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
-    "/locations/{location_id}": {
-      "get": {
-        "summary": "Retrieve a specific location",
-        "parameters": [
-          {
-            "name": "location_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a specific location",
-        "parameters": [
-          {
-            "name": "location_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a specific location",
-        "parameters": [
-          {
-            "name": "location_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/shops": {
-      "get": {
-        "summary": "Retrieve a list of shops",
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a new shop",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
-    "/shops/{shop_id}": {
-      "get": {
-        "summary": "Retrieve a specific shop",
-        "parameters": [
-          {
-            "name": "shop_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a specific shop",
-        "parameters": [
-          {
-            "name": "shop_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a specific shop",
-        "parameters": [
-          {
-            "name": "shop_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/products": {
-      "get": {
-        "summary": "Retrieve a list of products",
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a new product",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
-    "/products/{product_id}": {
-      "get": {
-        "summary": "Retrieve a specific product",
-        "parameters": [
-          {
-            "name": "product_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "put": {
-        "summary": "Update a specific product",
-        "parameters": [
-          {
-            "name": "product_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "delete": {
-        "summary": "Delete a specific product",
-        "parameters": [
-          {
-            "name": "product_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/transactions": {
-      "get": {
-        "summary": "Retrieve a list of transactions",
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      },
-      "post": {
-        "summary": "Create a new transaction",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
-    "/transactions/{transaction_id}": {
-      "get": {
-        "summary": "Retrieve a specific transaction",
-        "parameters": [
-          {
-            "name": "transaction_id",
-            "in": "path",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "integer"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success"
-          }
-        }
-      }
-    }
-  },
-  "components": {}
+openapi: "3.0.0"
+info:
+  title: "TVET College Web App API"
+  version: "1.0.0"
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/AbdisalamHassanMoamed/tvet_college/1.0.0
+  -
+    url: "https://app.swaggerhub.com/apis/AbdisalamHassanMoamed/tvet_college/1.0.0"
+    description: "SwaggerHub API Auto Mocking"
+tags:
+  - name: "Users"
+    description: "APIs for managing users"
+  - name: "Locations"
+    description: "APIs for managing locations"
+  - name: "Shops"
+    description: "APIs for managing shops"
+  - name: "Products"
+    description: "APIs for managing products"
+  - name: "Transactions"
+    description: "APIs for managing transactions"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    User:
+      type: object
+      properties:
+        user_id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        email:
+          type: string
+        password_hash:
+          type: string
+        role:
+          type: string
+      required:
+        - name
+        - email
+        - password_hash
+        - role
+    Location:
+      type: object
+      properties:
+        location_id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        address:
+          type: string
+      required:
+        - name
+        - address
+    Shop:
+      type: object
+      properties:
+        shop_id:
+          type: integer
+          readOnly: true
+        location_id:
+          type: integer
+        name:
+          type: string
+      required:
+        - location_id
+        - name
+    Product:
+      type: object
+      properties:
+        product_id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: float
+        category:
+          type: string
+        shop_type:
+          type: string
+        shop_id:
+          type: integer
+        stock:
+          type: integer
+      required:
+        - name
+        - price
+        - category
+        - shop_type
+        - shop_id
+        - stock
+    Transaction:
+      type: object
+      properties:
+        transaction_id:
+          type: integer
+          readOnly: true
+        user_id:
+          type: integer
+        product_id:
+          type: integer
+        quantity:
+          type: integer
+        transaction_time:
+          type: string
+          format: date-time
+      required:
+        - user_id
+        - product_id
+        - quantity
+paths:
+  /users:
+    get:
+      summary: "Retrieve a list of users"
+      tags: [Users]
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "401":
+          description: "Unauthorized"
+    post:
+      summary: "Create a new user"
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+  /users/{user_id}:
+    get:
+      summary: "Retrieve a specific user"
+      tags: [Users]
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "404":
+          description: "Not Found"
+    put:
+      summary: "Update a specific user"
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/User"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+    delete:
+      summary: "Delete a specific user"
+      tags: [Users]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: user_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: "No Content"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+  /locations:
+    get:
+      summary: "Retrieve a list of locations"
+      tags: [Locations]
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Location"
+        "401":
+          description: "Unauthorized"
+    post:
+      summary: "Create a new location"
+      tags: [Locations]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Location"
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+  /locations/{location_id}:
+    get:
+      summary: "Retrieve a specific location"
+      tags: [Locations]
+      parameters:
+        - name: location_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+        "404":
+          description: "Not Found"
+    put:
+      summary: "Update a specific location"
+      tags: [Locations]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: location_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Location"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Location"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+    delete:
+      summary: "Delete a specific location"
+      tags: [Locations]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: location_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: "No Content"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+  /shops:
+    get:
+      summary: "Retrieve a list of shops"
+      tags: [Shops]
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Shop"
+        "401":
+          description: "Unauthorized"
+    post:
+      summary: "Create a new shop"
+      tags: [Shops]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Shop"
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shop"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+  /shops/{shop_id}:
+    get:
+      summary: "Retrieve a specific shop"
+      tags: [Shops]
+      parameters:
+        - name: shop_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shop"
+        "404":
+          description: "Not Found"
+    put:
+      summary: "Update a specific shop"
+      tags: [Shops]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: shop_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Shop"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Shop"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+    delete:
+      summary: "Delete a specific shop"
+      tags: [Shops]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: shop_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: "No Content"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+
+  /products:
+    get:
+      summary: "Retrieve a list of products"
+      tags: [Products]
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Product"
+        "401":
+          description: "Unauthorized"
+    post:
+      summary: "Create a new product"
+      tags: [Products]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+  /products/{product_id}:
+    get:
+      summary: "Retrieve a specific product"
+      tags: [Products]
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "404":
+          description: "Not Found"
+    put:
+      summary: "Update a specific product"
+      tags: [Products]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Product"
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Product"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+    delete:
+      summary: "Delete a specific product"
+      tags: [Products]
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: product_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: "No Content"
+        "401":
+          description: "Unauthorized"
+        "404":
+          description: "Not Found"
+
+  /transactions:
+    get:
+      summary: "Retrieve a list of transactions"
+      tags: [Transactions]
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Transaction"
+        "401":
+          description: "Unauthorized"
+    post:
+      summary: "Create a new transaction"
+      tags: [Transactions]
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Transaction"
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+        "400":
+          description: "Bad Request"
+        "401":
+          description: "Unauthorized"
+  /transactions/{transaction_id}:
+    get:
+      summary: "Retrieve a specific transaction"
+      tags: [Transactions]
+      parameters:
+        - name: transaction_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: "Success"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Transaction"
+        "404":
+          description: "Not Found"
 }
