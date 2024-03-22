@@ -29,6 +29,22 @@ The report also addresses the transactional management requirements of the syste
 
 Instructions for installing and using the project will be provided in the future.
 
+### NOTE THIS IS NOT FINISHED AND MIGHT FAIL TO RUN.
+
+Before starting, make sure you have [nodejs](https://nodejs.org/en) installed then clone this repository `git clone https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/tree/hassan`
+
+use `alias npm-freeze='npm ls | grep -o "\S\+@\S\+$" | tr @ " " | awk -v q='\''"'\'' '\''{print q$1q": "q"^"$2q","}'\'''`
+
+then `npm-freeze` and install the packages shown in the terminal.
+
+like this `npm install <package_name>`
+
+next create the database in pgadmin. the code can be found in `./TVET_COLLEGE_SQL_CODE`
+
+next run the `server.js` in `./WEB_APP/`
+
+finally, you can access the simple dashboard webapp `localhost:3000/` and the docs from `localhost:3000/api-docs/`
+
 ## Contributing
 
 Contributions to this project are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
