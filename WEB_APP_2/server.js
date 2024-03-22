@@ -117,7 +117,7 @@ app.get('/transactions', authenticateToken, async (req, res) => {
 
 // Serve the index.html file for the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
 
 app.listen(3000, () => {
