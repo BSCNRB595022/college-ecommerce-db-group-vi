@@ -41,9 +41,9 @@ like this `npm install <package_name>`
 
 next create the database in pgadmin. the code can be found in `./TVET_COLLEGE_SQL_CODE`
 
-next run the `app.js` in `./WEB_APP/`
+next run the `server.js` in `./WEB_APP/`
 
-finally, you can access the simple dashboard webapp `localhost:3000`
+finally, you can access the simple dashboard webapp `localhost:3000/` and the docs from `localhost:3000/api-docs/`
 
 ## Contributing
 
