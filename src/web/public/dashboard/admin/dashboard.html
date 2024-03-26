@@ -1,3 +1,4 @@
+<!-- dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +11,57 @@
     <div class="container">
         <h2>Admin Dashboard</h2>
         <div class="tabs">
-            <button id="shops" class="tab-button active">Shops</button>
-            <button id="products" class="tab-button">Products</button>
-            <button id="locations" class="tab-button">Locations</button>
-            <button id="transactions" class="tab-button">Transactions</button>
+            <button id="shops-tab" class="tab-button active">Shops</button>
+            <button id="products-tab" class="tab-button">Products</button>
+            <button id="locations-tab" class="tab-button">Locations</button>
+            <button id="transactions-tab" class="tab-button">Transactions</button>
         </div>
         <div id="content" class="tab-content">
             <!-- Content will be dynamically loaded here -->
+        </div>
+    </div>
+
+    <!-- Edit Modals -->
+    <div id="edit-shop-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Shop</h3>
+            <form id="edit-shop-form">
+                <input type="hidden" id="edit-shop-id" name="id">
+                <label for="edit-shop-name">Shop Name:</label>
+                <input type="text" id="edit-shop-name" name="name" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Product</h3>
+            <form id="edit-product-form">
+                <input type="hidden" id="edit-product-id" name="id">
+                <label for="edit-product-name">Product Name:</label>
+                <input type="text" id="edit-product-name" name="name" required>
+                <label for="edit-product-price">Price:</label>
+                <input type="number" id="edit-product-price" name="price" step="0.01" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="edit-location-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Edit Location</h3>
+            <form id="edit-location-form">
+                <input type="hidden" id="edit-location-id" name="id">
+                <label for="edit-location-name">Location Name:</label>
+                <input type="text" id="edit-location-name" name="name" required>
+                <label for="edit-location-address">Address:</label>
+                <input type="text" id="edit-location-address" name="address" required>
+                <button type="submit">Save Changes</button>
+            </form>
         </div>
     </div>
 
