@@ -27,7 +27,7 @@ The report also addresses the transactional management requirements of the syste
 
 ## Installation and Usage Guide
 
-Please refer to the [INSTALLATION GUIDE](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/instructions/INSTALLATION.md)
+Please refer to the [INSTALLATION GUIDE](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/instructions/START_HERE_INSTALLATION.md.md)
 for a detailed step by step instructions on how to setup this database.
 
 ## Contributing

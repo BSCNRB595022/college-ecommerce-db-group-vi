@@ -1,6 +1,6 @@
 # Database Setup Instructions
 
-Hello! To set up the database, please follow the instructions below:
+To set up the database, please follow the instructions below:
 
 1. **Open PostgreSQL**: Click the 'Windows/Start' button on your keyboard and search for `psql`. This command will only work if you have Postgres installed. If you haven't installed it yet, you can download it from [here](https://www.postgresql.org/download/).
 
@@ -154,4 +154,4 @@ Hello! To set up the database, please follow the instructions below:
 
 That's it! Your database should now be set up according to the specified requirements.
 
-- To create a sample data
+YOU CAN FIND HERE ALL THE EXTRA DATABASE OPERATION COMMANDS [IN THIS LINK](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/instructions/DB_OPERATIONS.md)
