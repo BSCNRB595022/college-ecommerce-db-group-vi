@@ -38,42 +38,70 @@ const authenticateToken = (req, res, next) => {
     });
 };
 
+// Serve the registration page
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'register', 'register.html'));
+});
+
 // Register route
 app.post('/register', async (req, res) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, role } = req.body;
 
     try {
+        // Hash the password before storing it in the database
         const hashedPassword = await bcrypt.hash(password, 10);
-        const result = await pool.query('INSERT INTO TVET_COLLEGE_ECOMMERCE.users (name, email, password_hash, role) VALUES ($1, $2, $3, $4) RETURNING *', [name, email, hashedPassword, 'user']);
+        
+        // Insert the new user into the database
+        const result = await pool.query(
+            'INSERT INTO TVET_COLLEGE_ECOMMERCE.users (name, email, password_hash, role) VALUES ($1, $2, $3, $4) RETURNING *',
+            [name, email, hashedPassword, role]
+        );
+
+        // Send back the newly created user
         res.status(201).json(result.rows[0]);
     } catch (error) {
+        // Handle errors
         res.status(400).json({ error: error.message });
     }
+});
+
+// Serve the login page
+app.get('/login', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'login', 'login.html'));
 });
 
 // Login route
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
 
-    const result = await pool.query('SELECT user_id, password_hash, role FROM TVET_COLLEGE_ECOMMERCE.users WHERE email = $1', [email]);
+    try {
+        // Check if the user exists in the database
+        const result = await pool.query(
+            'SELECT * FROM TVET_COLLEGE_ECOMMERCE.users WHERE email = $1',
+            [email]
+        );
 
-    if (result.rows.length === 0) {
-        return res.status(401).json({ error: 'Invalid email or password' });
+        if (result.rows.length === 0) {
+            return res.status(401).json({ error: 'User not found. Please register.' });
+        }
+
+        const user = result.rows[0];
+
+        // Check if the password matches
+        const passwordMatch = await bcrypt.compare(password, user.password_hash);
+
+        if (!passwordMatch) {
+            return res.status(401).json({ error: 'Incorrect password.' });
+        }
+
+        // Send back the user's role
+        res.status(200).json({ role: user.role });
+    } catch (error) {
+        // Handle errors
+        res.status(400).json({ error: error.message });
     }
-
-    // for getting the api from
-    const user = result.rows[0];
-
-    const isPasswordValid = await bcrypt.compare(password, user.password_hash);
-
-    if (!isPasswordValid) {
-        return res.status(401).json({ error: 'Invalid email or password' });
-    }
-
-    const token = jwt.sign({ userId: user.user_id, role: user.role }, secretKey, { expiresIn: '1h' });
-
-    res.json({ token });
 });
+
 
 // User route
 app.get('/user', authenticateToken, async (req, res) => {
@@ -116,9 +144,9 @@ app.get('/transactions', authenticateToken, async (req, res) => {
     res.json(result.rows);
 });
 
-// Serve the index.html file for the root URL
+// Serve the login.html file for the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login.html'));
+    res.sendFile(path.join(__dirname, 'public', 'login', 'login.html'));
 });
 
 app.listen(3000, () => {
