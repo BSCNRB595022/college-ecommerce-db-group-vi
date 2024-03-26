@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const shopName = document.getElementById('edit-shop-name').value;
 
         try {
-            const response = await fetch(`/api/shops/${shopId}`, {
+            const response = await fetch(`/shops/${shopId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -238,7 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const productPrice = document.getElementById('edit-product-price').value;
 
         try {
-            const response = await fetch(`/api/products/${productId}`, {
+            const response = await fetch(`/products/${productId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const locationAddress = document.getElementById('edit-location-address').value;
 
         try {
-            const response = await fetch(`/api/locations/${locationId}`, {
+            const response = await fetch(`/locations/${locationId}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -287,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteShop = async (shopId) => {
         try {
-            const response = await fetch(`/api/shops/${shopId}`, {
+            const response = await fetch(`/shops/${shopId}`, {
                 method: 'DELETE'
             });
 
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteProduct = async (productId) => {
         try {
-            const response = await fetch(`/api/products/${productId}`, {
+            const response = await fetch(`/products/${productId}`, {
                 method: 'DELETE'
             });
 
@@ -319,7 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const deleteLocation = async (locationId) => {
         try {
-            const response = await fetch(`/api/locations/${locationId}`, {
+            const response = await fetch(`/locations/${locationId}`, {
                 method: 'DELETE'
             });
 
