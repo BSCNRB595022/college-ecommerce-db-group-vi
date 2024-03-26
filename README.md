@@ -65,10 +65,9 @@ cd college-ecommerce-db-group-iv
 npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
 ```
 
-### Step 2: Launch Postgres Shell and Follow the instructions file.
+### Step 2: Creating the Database by Following the instructions file.
 
-- Click the `Windows/Start` button on your keyboard and search for `psql`. This command will only work if you have [Postgres](https://www.postgresql.org/download/) installed.
-- Refer to the instructions provided in the `TVET_COLLEGE_SQL_CODE\instructions.txt` file. This file can be found in the `college-ecommerce-db-group-iv` folder on your desktop.
+- Refer to the [instructions provided in this link](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/instructopms/DB_CREATION.md) to create a database.
 
 ### Step 3: Start the Server and navigate to the webapp's dashboard
 
