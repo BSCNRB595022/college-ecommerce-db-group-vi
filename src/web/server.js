@@ -94,8 +94,11 @@ app.post('/login', async (req, res) => {
             return res.status(401).json({ error: 'Incorrect password.' });
         }
 
-        // Send back the user's role
-        res.status(200).json({ role: user.role });
+        // Generate a JWT token for the user
+        const token = jwt.sign({ userId: user.id, role: user.role }, secretKey, { expiresIn: '1h' });
+
+        // Send back the token and user's role
+        res.status(200).json({ token, role: user.role });
     } catch (error) {
         // Handle errors
         res.status(400).json({ error: error.message });
@@ -107,10 +110,9 @@ app.get('/dashboard/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'dashboard', 'admin', 'dashboard.html'));
 });
 
-// Route to fetch shop data
-app.get('/dashboard/admin/shops', async (req, res) => {
+// API route to fetch shop data
+app.get('/shops', authenticateToken, async (req, res) => {
     try {
-        // Fetch shop data from the database
         const result = await pool.query('SELECT * FROM shops');
         res.json(result.rows);
     } catch (error) {
@@ -119,20 +121,48 @@ app.get('/dashboard/admin/shops', async (req, res) => {
     }
 });
 
+// API route to update a shop
+app.put('/shops/:id', authenticateToken, async (req, res) => {
+    const shopId = req.params.id;
+    const { name } = req.body;
 
-// Route to fetch shops data
-app.get('/fetchShops', async (req, res) => {
     try {
-        const shops = await pool.query('SELECT * FROM shops');
-        res.json(shops.rows);
+        const result = await pool.query(
+            'UPDATE shops SET name = $1 WHERE id = $2 RETURNING *',
+            [name, shopId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Shop not found' });
+        }
+
+        res.json(result.rows[0]);
     } catch (error) {
-        console.error('Error fetching shops:', error);
+        console.error('Error updating shop:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
 });
 
-// Route to fetch products data
-app.get('/fetchProducts', async (req, res) => {
+// API route to delete a shop
+app.delete('/shops/:id', authenticateToken, async (req, res) => {
+    const shopId = req.params.id;
+
+    try {
+        const result = await pool.query('DELETE FROM shops WHERE id = $1 RETURNING *', [shopId]);
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Shop not found' });
+        }
+
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error('Error deleting shop:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// API route to fetch products data
+app.get('/products', authenticateToken, async (req, res) => {
     try {
         const products = await pool.query('SELECT * FROM products');
         res.json(products.rows);
@@ -142,8 +172,48 @@ app.get('/fetchProducts', async (req, res) => {
     }
 });
 
-// Route to fetch locations data
-app.get('/fetchLocations', async (req, res) => {
+// API route to update a product
+app.put('/products/:id', authenticateToken, async (req, res) => {
+    const productId = req.params.id;
+    const { name, price } = req.body;
+
+    try {
+        const result = await pool.query(
+            'UPDATE products SET name = $1, price = $2 WHERE id = $3 RETURNING *',
+            [name, price, productId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error('Error updating product:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// API route to delete a product
+app.delete('/products/:id', authenticateToken, async (req, res) => {
+    const productId = req.params.id;
+
+    try {
+        const result = await pool.query('DELETE FROM products WHERE id = $1 RETURNING *', [productId]);
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Product not found' });
+        }
+
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error('Error deleting product:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// API route to fetch locations data
+app.get('/locations', authenticateToken, async (req, res) => {
     try {
         const locations = await pool.query('SELECT * FROM locations');
         res.json(locations.rows);
@@ -153,8 +223,48 @@ app.get('/fetchLocations', async (req, res) => {
     }
 });
 
-// Route to fetch transactions data
-app.get('/fetchTransactions', async (req, res) => {
+// API route to update a location
+app.put('/locations/:id', authenticateToken, async (req, res) => {
+    const locationId = req.params.id;
+    const { name, address } = req.body;
+
+    try {
+        const result = await pool.query(
+            'UPDATE locations SET name = $1, address = $2 WHERE id = $3 RETURNING *',
+            [name, address, locationId]
+        );
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Location not found' });
+        }
+
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error('Error updating location:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// API route to delete a location
+app.delete('/locations/:id', authenticateToken, async (req, res) => {
+    const locationId = req.params.id;
+
+    try {
+        const result = await pool.query('DELETE FROM locations WHERE id = $1 RETURNING *', [locationId]);
+
+        if (result.rows.length === 0) {
+            return res.status(404).json({ error: 'Location not found' });
+        }
+
+        res.json(result.rows[0]);
+    } catch (error) {
+        console.error('Error deleting location:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// API route to fetch transactions data
+app.get('/transactions', authenticateToken, async (req, res) => {
     try {
         const transactions = await pool.query('SELECT * FROM transactions');
         res.json(transactions.rows);
@@ -162,47 +272,6 @@ app.get('/fetchTransactions', async (req, res) => {
         console.error('Error fetching transactions:', error);
         res.status(500).json({ error: 'Internal server error' });
     }
-});
-
-// User route
-app.get('/user', authenticateToken, async (req, res) => {
-    const result = await pool.query('SELECT user_id, name, email, role FROM TVET_COLLEGE_ECOMMERCE.users WHERE user_id = $1', [req.user.userId]);
-
-    if (result.rows.length === 0) {
-        return res.status(404).json({ error: 'User not found' });
-    }
-
-    res.json(result.rows[0]);
-});
-
-// Users route
-app.get('/users', authenticateToken, async (req, res) => {
-    const result = await pool.query('SELECT user_id, name, email, role FROM TVET_COLLEGE_ECOMMERCE.users');
-    res.json(result.rows);
-});
-
-// Locations route
-app.get('/locations', authenticateToken, async (req, res) => {
-    const result = await pool.query('SELECT * FROM TVET_COLLEGE_ECOMMERCE.locations');
-    res.json(result.rows);
-});
-
-// Shops route
-app.get('/shops', authenticateToken, async (req, res) => {
-    const result = await pool.query('SELECT * FROM TVET_COLLEGE_ECOMMERCE.shops');
-    res.json(result.rows);
-});
-
-// Products route
-app.get('/products', authenticateToken, async (req, res) => {
-    const result = await pool.query('SELECT * FROM TVET_COLLEGE_ECOMMERCE.products');
-    res.json(result.rows);
-});
-
-// Transactions route
-app.get('/transactions', authenticateToken, async (req, res) => {
-    const result = await pool.query('SELECT * FROM TVET_COLLEGE_ECOMMERCE.transactions');
-    res.json(result.rows);
 });
 
 // Serve the login.html file for the root URL
