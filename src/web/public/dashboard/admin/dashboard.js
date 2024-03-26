@@ -1,69 +1,113 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Function to switch between tabs
-    function switchTab(tabName) {
-        // Hide all tab content
-        const tabContents = document.querySelectorAll('.tab-content > div');
-        tabContents.forEach(tab => {
-            tab.classList.remove('active');
+    const tabs = document.querySelectorAll('.tab-button');
+    const content = document.getElementById('content');
+
+    // Add click event listener to each tab button
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            // Remove 'active' class from all tabs
+            tabs.forEach(t => t.classList.remove('active'));
+
+            // Add 'active' class to the clicked tab
+            tab.classList.add('active');
+
+            // Load content based on the clicked tab
+            loadContent(tab.id);
         });
-
-        // Show selected tab content
-        const selectedTab = document.getElementById(tabName);
-        if (selectedTab) {
-            selectedTab.classList.add('active');
-        }
-    }
-
-    // Function to handle tab button click
-    function handleTabClick(event) {
-        const tabName = event.target.dataset.tab;
-        if (tabName) {
-            switchTab(tabName);
-            // Mark the clicked tab as active
-            const tabButtons = document.querySelectorAll('.tab-button');
-            tabButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-            event.target.classList.add('active');
-        }
-    }
-
-    // Add event listener to tab buttons
-    const tabButtons = document.querySelectorAll('.tab-button');
-    tabButtons.forEach(button => {
-        button.addEventListener('click', handleTabClick);
     });
 
-    // Initially show the first tab
-    switchTab('shops'); // Assuming 'shops' is the ID of the first tab content
-
-    // Function to fetch and display shop data
-    async function displayShops() {
+    // Function to load content based on the selected tab
+    async function loadContent(tabId) {
         try {
-            const response = await fetch('/dashboard/admin/shops');
+            const response = await fetch(`/dashboard/admin/${tabId}`);
             const data = await response.json();
-            const shopTable = document.getElementById('shop-table-body');
-            shopTable.innerHTML = ''; // Clear previous data
 
-            data.forEach(shop => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${shop.id}</td>
-                    <td>${shop.name}</td>
-                    <td>${shop.location}</td>
-                    <td>${shop.description}</td>
-                `;
-                shopTable.appendChild(row);
-            });
+            // Replace this with your logic to render content based on data
+            let contentHTML = '';
+            switch (tabId) {
+                case 'shops':
+                    contentHTML = renderShops(data);
+                    break;
+                case 'products':
+                    contentHTML = renderProducts(data);
+                    break;
+                case 'locations':
+                    contentHTML = renderLocations(data);
+                    break;
+                case 'transactions':
+                    contentHTML = renderTransactions(data);
+                    break;
+                default:
+                    contentHTML = 'Content not available';
+            }
+            content.innerHTML = contentHTML;
         } catch (error) {
-            console.error('Error fetching shop data:', error);
-            alert('An error occurred while fetching shop data. Please try again later.');
+            console.error('Error loading content:', error);
+            content.innerHTML = '<p>Failed to load content. Please try again later.</p>';
         }
     }
 
-    // Fetch and display shop data initially
-    displayShops();
+   // Function to render shops content
+function renderShops(data) {
+    let html = '<h3>Shops</h3>';
+    if (data && data.length > 0) {
+        html += '<ul>';
+        data.forEach(shop => {
+            html += `<li>${shop.name} - ${shop.location}</li>`;
+        });
+        html += '</ul>';
+    } else {
+        html += '<p>No shops available.</p>';
+    }
+    return html;
+}
 
-    // Other functions for fetching and displaying products, locations, transactions, etc. can be implemented similarly
-    // Remember to update the switchTab function to switch between respective tab contents
+// Function to render products content
+function renderProducts(data) {
+    let html = '<h3>Products</h3>';
+    if (data && data.length > 0) {
+        html += '<ul>';
+        data.forEach(product => {
+            html += `<li>${product.name} - $${product.price}</li>`;
+        });
+        html += '</ul>';
+    } else {
+        html += '<p>No products available.</p>';
+    }
+    return html;
+}
+
+// Function to render locations content
+function renderLocations(data) {
+    let html = '<h3>Locations</h3>';
+    if (data && data.length > 0) {
+        html += '<ul>';
+        data.forEach(location => {
+            html += `<li>${location.name} - ${location.address}</li>`;
+        });
+        html += '</ul>';
+    } else {
+        html += '<p>No locations available.</p>';
+    }
+    return html;
+}
+
+// Function to render transactions content
+function renderTransactions(data) {
+    let html = '<h3>Transactions</h3>';
+    if (data && data.length > 0) {
+        html += '<ul>';
+        data.forEach(transaction => {
+            html += `<li>${transaction.product_name} - ${transaction.quantity} at $${transaction.price} each</li>`;
+        });
+        html += '</ul>';
+    } else {
+        html += '<p>No transactions available.</p>';
+    }
+    return html;
+}
+
+
+    // Load default content when the page loads
+    loadContent('shops');
 });
