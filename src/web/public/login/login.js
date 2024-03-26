@@ -1,5 +1,3 @@
-// login.js
-
 document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('login-form');
     loginForm.addEventListener('submit', async function(event) {
@@ -27,14 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
             });
 
-            console.log('Response:', response);
-
             const responseData = await response.json();
 
-            console.log('Response data:', responseData);
-
             if (response.status === 200) {
-                const { role } = responseData;
+                const { token, role } = responseData;
+                // Store the token in localStorage or cookies
+                localStorage.setItem('token', token);
+
                 // Redirect to the appropriate dashboard based on the user's role
                 if (role === 'admin') {
                     window.location.href = '/dashboard/admin';
