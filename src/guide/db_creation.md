@@ -154,4 +154,4 @@ To set up the database, please follow the instructions below:
 
 That's it! Your database should now be set up according to the specified requirements.
 
-YOU CAN FIND ALL THE EXTRA DATABASE OPERATION COMMANDS [IN THIS LINK](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/instructions/db_operation.md)
+YOU CAN FIND ALL THE EXTRA DATABASE OPERATION COMMANDS [IN THIS LINK](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/guide/db_operation.md)
