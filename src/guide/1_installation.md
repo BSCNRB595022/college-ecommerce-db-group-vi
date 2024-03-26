@@ -54,7 +54,7 @@ cd Desktop/college-ecommerce-db-group-iv
 - Start the server
 
 ```bash
-node WEB_APP_2/server
+node src/web/server
 ```
 
 ### Step 4: Access the Application
