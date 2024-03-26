@@ -44,7 +44,7 @@ npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
 
 ### Step 3: Start the Server and navigate to the webapp's dashboard
 
-- Return to your command prompt and execute the following commands:
+- Open a new command prompt and execute the following commands:
 - Navigate to the repository folder
 
 ```bash
