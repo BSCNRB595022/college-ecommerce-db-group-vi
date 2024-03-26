@@ -37,9 +37,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const { role } = responseData;
                 // Redirect to the appropriate dashboard based on the user's role
                 if (role === 'admin') {
-                    window.location.href = '/admin_dashboard.html';
+                    window.location.href = '/dashboard/admin';
                 } else {
-                    window.location.href = '/user_dashboard.html';
+                    window.location.href = '/dashboard/user';
                 }
             } else {
                 alert(responseData.error || 'Login failed. Please try again.');
