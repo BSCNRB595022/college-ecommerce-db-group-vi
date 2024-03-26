@@ -1,2 +1,16 @@
+<<<<<<< HEAD
 # node_modules #
 node_modules
+=======
+# node_modules #
+node_modules
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+>>>>>>> hassan
