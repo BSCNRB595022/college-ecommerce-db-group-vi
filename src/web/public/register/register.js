@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.status === 201) {
                 alert('Registration successful!');
                 // Redirect to login page or perform any other action as needed
-                window.location.href = '/login.html';
+                window.location.href = '/login';
             } else {
                 alert(responseData.error || 'Registration failed. Please try again.');
             }
