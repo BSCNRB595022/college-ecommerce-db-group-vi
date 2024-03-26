@@ -1,0 +1,64 @@
+/* admin_dashboard.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #0056b3;
+}
+
+.tab-button.active {
+    background-color: #0056b3;
+}
+
+.tab-content {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 20px;
+}
+
+/* Hide content initially */
+.tab-content > div {
+    display: none;
+}
+
+/* Show active content */
+.tab-content > div.active {
+    display: block;
+}
