@@ -25,25 +25,79 @@ The report accompanying this repository discusses the database security consider
 
 The report also addresses the transactional management requirements of the system, ensuring that the database architecture and design align with the business requirements of the TVET college.
 
-## Installation and Usage
+## Installation and Usage Guide
 
-Instructions for installing and using the project will be provided in the future.
+Please note that the project is a work in progress and may not run as expected.
 
-### NOTE THIS IS NOT FINISHED AND MIGHT FAIL TO RUN.
+### Prerequisites
 
-Before starting, make sure you have [nodejs](https://nodejs.org/en) installed then clone this repository `git clone https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/tree/hassan`
+Before you begin, ensure that you have the following software installed on your machine:
 
-use `alias npm-freeze='npm ls | grep -o "\S\+@\S\+$" | tr @ " " | awk -v q='\''"'\'' '\''{print q$1q": "q"^"$2q","}'\'''`
+- [Postgres](https://www.postgresql.org/download/)
+- [Node.js](https://nodejs.org/en/download/)
+- [Git](https://git-scm.com/download/)
 
-then `npm-freeze` and install the packages shown in the terminal.
+### Step 1: Clone the Repository and Install Dependencies.
 
-like this `npm install <package_name>`
+- Open your command prompt and execute the following commands sequentially:
 
-next create the database in pgadmin. the code can be found in `./TVET_COLLEGE_SQL_CODE`
+- Navigate to the desktop directory
 
-next run the `server.js` in `./WEB_APP/`
+```bash
+cd Desktop
+```
 
-finally, you can access the simple dashboard webapp `localhost:3000/` and the docs from `localhost:3000/api-docs/`
+- Clone the repository
+
+```bash
+git clone https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/
+```
+
+- Navigate to the cloned repository
+
+```bash
+cd college-ecommerce-db-group-iv
+```
+
+- Install the necessary packages using the following command. Note that [Node.js](https://nodejs.org/en/download/) is required for this step.
+
+```bash
+npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
+```
+
+### Step 2: Launch Postgres Shell and Follow the instructions file.
+
+- Click the `Windows/Start` button on your keyboard and search for `psql`. This command will only work if you have [Postgres](https://www.postgresql.org/download/) installed.
+- Refer to the instructions provided in the `TVET_COLLEGE_SQL_CODE\instructions.txt` file. This file can be found in the `college-ecommerce-db-group-iv` folder on your desktop.
+
+### Step 3: Start the Server and navigate to the webapp's dashboard
+
+- Return to your command prompt and execute the following commands:
+- Navigate to the repository folder
+
+```bash
+cd Desktop/college-ecommerce-db-group-iv
+```
+
+- Start the server
+
+```bash
+node WEB_APP_2/server
+```
+
+### Step 4: Access the Application
+
+- Open your web browser and navigate to the link below to see the dashboard of the webapp
+
+```
+localhost:3000/
+```
+
+- The API documentation can be found at
+
+```
+localhost:3000/api-docs/
+```
 
 ## Contributing
 
