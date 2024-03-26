@@ -40,7 +40,7 @@ npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
 
 ### Step 2: Creating the Database by Following the instructions file.
 
-- Refer to the [instructions provided in this link](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/instructions/DB_CREATION.md) to create a database.
+- Refer to the [instructions provided in this link](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/instructions/db_creation.md) to create a database.
 
 ### Step 3: Start the Server and navigate to the webapp's dashboard
 
