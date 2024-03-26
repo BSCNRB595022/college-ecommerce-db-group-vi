@@ -15,7 +15,7 @@ To set up the database, please follow the instructions below:
    ```
 
    ```
-   \c TVET_COLLEGE
+   \c tvet_college
    ```
 
    ```sql
