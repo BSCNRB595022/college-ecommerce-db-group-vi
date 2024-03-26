@@ -12,9 +12,18 @@ To set up the database, please follow the instructions below:
 
    ```sql
    CREATE DATABASE TVET_COLLEGE;
-   CREATE SCHEMA TVET_COLLEGE_ECOMMERCE;
-   SET search_path TO TVET_COLLEGE_ECOMMERCE;
+   ```
 
+   ```
+   \c TVET_COLLEGE
+   ```
+
+   ```sql
+   CREATE SCHEMA TVET_COLLEGE_ECOMMERCE;
+   ```
+
+   ```sql
+   SET search_path TO TVET_COLLEGE_ECOMMERCE;
    ```
 
 5. **Create the Database Tables**:
