@@ -102,6 +102,22 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Serve the admin dashboard page
+app.get('/dashboard/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'dashboard', 'admin', 'dashboard.html'));
+});
+
+// Route to fetch shop data
+app.get('/dashboard/admin/shops', async (req, res) => {
+    try {
+        // Fetch shop data from the database
+        const result = await pool.query('SELECT * FROM shops');
+        res.json(result.rows);
+    } catch (error) {
+        console.error('Error fetching shop data:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
 
 // User route
 app.get('/user', authenticateToken, async (req, res) => {
