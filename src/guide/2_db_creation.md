@@ -23,7 +23,7 @@ To set up the database, please follow the instructions below:
    ```
 
    ```sql
-   SET search_path TO TVET_COLLEGE_ECOMMERCE;
+   SET search_path TO tvet_college_ecommerce;
    ```
 
 5. **Create the Database Tables**:
