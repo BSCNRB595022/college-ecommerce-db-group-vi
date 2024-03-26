@@ -179,6 +179,105 @@ To set up the database, please follow the instructions below:
 
    ```
 
+10. **Insert Data into the tables**:
+
+    - Insert data into the locations table;
+
+      ```sql
+      INSERT INTO locations (name, address)
+      VALUES
+      ('Nairobi Campus', 'Kenyatta Avenue, Nairobi CBD'),
+      ('Mombasa Campus', 'Nkrumah Road, Mombasa Island'),
+      ('Kisumu Campus', 'Oginga Odinga Street, Kisumu Town'),
+      ('Nakuru Campus', 'Kenyatta Avenue, Nakuru Town'),
+      ('Eldoret Campus', 'Uganda Road, Eldoret Town');
+
+      ```
+
+    - Insert data into the shops table
+
+      ```sql
+      INSERT INTO shops (location_id, name)
+      VALUES
+      (1, 'Nairobi Cafeteria'),
+      (1, 'Nairobi Tuckshop'),
+      (1, 'Nairobi Pharmacy'),
+      (1, 'Nairobi Bookshop'),
+      (1, 'Nairobi Digital Center'),
+      (2, 'Mombasa Cafeteria'),
+      (2, 'Mombasa Tuckshop'),
+      (3, 'Kisumu Cafeteria'),
+      (3, 'Kisumu Tuckshop'),
+      (4, 'Nakuru Cafeteria');
+
+      ```
+
+    - Insert data into the cafeterias table
+
+      ```sql
+      INSERT INTO cafeterias (shop_id)
+      VALUES
+      (1),
+      (6),
+      (8);
+
+      ```
+
+    - Insert data into the tuckshops table
+
+      ```sql
+        INSERT INTO tuckshops (shop_id)
+        VALUES
+        (2),
+        (7),
+        (9);
+
+      ```
+
+    - Insert data into the pharmacies table
+
+      ```sql
+      INSERT INTO pharmacies (shop_id)
+      VALUES
+      (3);
+
+      ```
+
+    - Insert data into the bookshops table
+
+      ```sql
+      INSERT INTO bookshops (shop_id)
+      VALUES
+      (4);
+      ```
+
+    - Insert data into the digitalcenters table
+
+      ```sql
+      INSERT INTO digitalcenters (shop_id)
+      VALUES
+      (5);
+
+      ```
+
+    - Insert data into the products table
+
+      ```sql
+      INSERT INTO products (name, description, price, category, shop_type, shop_id, stock)
+      VALUES
+      ('Chapati', 'Kenyan flatbread', 20.00, 'Food', 'cafeteria', 1, 100),
+      ('Kachumbari', 'Kenyan salad', 50.00, 'Food', 'cafeteria', 1, 75),
+      ('Madafu', 'Coconut juice', 30.00, 'Beverage', 'cafeteria', 6, 120),
+      ('Samosa', 'Fried pastry', 15.00, 'Snack', 'tuckshop', 2, 200),
+      ('Panadol', 'Pain relief tablets', 80.00, 'Medicine', 'pharmacy', 3, 50),
+      ('Kiswahili Dictionary', 'Swahili language dictionary', 350.00, 'Book', 'bookshop', 4, 30),
+      ('Laptop Charger', 'Universal laptop charger', 1500.00, 'Accessory', 'digitalcenter', 5, 20),
+      ('Ugali', 'Kenyan cornmeal dish', 40.00, 'Food', 'cafeteria', 8, 150),
+      ('Muratina', 'Kenyan bread', 25.00, 'Food', 'tuckshop', 9, 180),
+      ('Kikombe', 'Kenyan tea cup', 120.00, 'Kitchenware', 'tuckshop', 9, 60);
+
+      ```
+
 That's it! Your database should now be set up according to the specified requirements.
 
 Once you created the database, [please go back to step 3 in installation guide](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/guide/1_installation.md)
