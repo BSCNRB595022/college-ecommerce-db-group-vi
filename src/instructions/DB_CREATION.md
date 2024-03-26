@@ -153,3 +153,5 @@ Hello! To set up the database, please follow the instructions below:
    ```
 
 That's it! Your database should now be set up according to the specified requirements.
+
+- To create a sample data
