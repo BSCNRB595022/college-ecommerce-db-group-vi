@@ -12,18 +12,22 @@ To set up the database, please follow the instructions below:
 
    ```sql
    CREATE DATABASE TVET_COLLEGE;
+
    ```
 
    ```
    \c tvet_college
+
    ```
 
    ```sql
    CREATE SCHEMA TVET_COLLEGE_ECOMMERCE;
+
    ```
 
    ```sql
    SET search_path TO tvet_college_ecommerce;
+
    ```
 
 5. **Create the Database Tables**:
@@ -38,6 +42,7 @@ To set up the database, please follow the instructions below:
        password_hash VARCHAR(255),
        role VARCHAR(20)
      );
+
      ```
 
    - Locations Table
@@ -48,6 +53,7 @@ To set up the database, please follow the instructions below:
        name VARCHAR(100),
        address VARCHAR(255)
      );
+
      ```
 
    - Shops Table
@@ -58,6 +64,7 @@ To set up the database, please follow the instructions below:
        location_id INTEGER REFERENCES locations(location_id),
        name VARCHAR(100)
      );
+
      ```
 
    - Cafeterias Table
@@ -67,6 +74,7 @@ To set up the database, please follow the instructions below:
        shop_id INTEGER PRIMARY KEY,
        FOREIGN KEY (shop_id) REFERENCES shops(shop_id)
      );
+
      ```
 
    - Tuckshops Table
@@ -76,6 +84,7 @@ To set up the database, please follow the instructions below:
        shop_id INTEGER PRIMARY KEY,
        FOREIGN KEY (shop_id) REFERENCES shops(shop_id)
      );
+
      ```
 
    - Pharmacies Table
@@ -85,6 +94,7 @@ To set up the database, please follow the instructions below:
        shop_id INTEGER PRIMARY KEY,
        FOREIGN KEY (shop_id) REFERENCES shops(shop_id)
      );
+
      ```
 
    - Bookshops Table
@@ -94,6 +104,7 @@ To set up the database, please follow the instructions below:
        shop_id INTEGER PRIMARY KEY,
        FOREIGN KEY (shop_id) REFERENCES shops(shop_id)
      );
+
      ```
 
    - Digital Centers Table
@@ -103,9 +114,11 @@ To set up the database, please follow the instructions below:
        shop_id INTEGER PRIMARY KEY,
        FOREIGN KEY (shop_id) REFERENCES shops(shop_id)
      );
+
      ```
 
    - Products Table
+
      ```sql
      CREATE TABLE products (
        product_id SERIAL PRIMARY KEY,
@@ -117,6 +130,7 @@ To set up the database, please follow the instructions below:
        shop_id INTEGER REFERENCES shops(shop_id),
        stock INTEGER
      );
+
      ```
 
 6. **Index the Database**:
@@ -127,6 +141,7 @@ To set up the database, please follow the instructions below:
    CREATE INDEX products_name_idx ON products (name);
    CREATE INDEX products_category_idx ON products (category);
    CREATE INDEX products_shop_type_idx ON products (shop_type);
+
    ```
 
 7. **Create a Function**:
@@ -138,6 +153,7 @@ To set up the database, please follow the instructions below:
      RETURN NEW;
    END;
    $$ LANGUAGE plpgsql;
+
    ```
 
 8. **Create the Transactions Table**:
@@ -150,6 +166,7 @@ To set up the database, please follow the instructions below:
      quantity INTEGER,
      transaction_time TIMESTAMP DEFAULT NOW()
    );
+
    ```
 
 9. **Create a Trigger**:
@@ -159,6 +176,7 @@ To set up the database, please follow the instructions below:
    AFTER INSERT ON transactions
    FOR EACH ROW
    EXECUTE FUNCTION update_product_stock();
+
    ```
 
 That's it! Your database should now be set up according to the specified requirements.
