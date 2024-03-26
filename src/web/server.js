@@ -119,6 +119,51 @@ app.get('/dashboard/admin/shops', async (req, res) => {
     }
 });
 
+
+// Route to fetch shops data
+app.get('/fetchShops', async (req, res) => {
+    try {
+        const shops = await pool.query('SELECT * FROM shops');
+        res.json(shops.rows);
+    } catch (error) {
+        console.error('Error fetching shops:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Route to fetch products data
+app.get('/fetchProducts', async (req, res) => {
+    try {
+        const products = await pool.query('SELECT * FROM products');
+        res.json(products.rows);
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Route to fetch locations data
+app.get('/fetchLocations', async (req, res) => {
+    try {
+        const locations = await pool.query('SELECT * FROM locations');
+        res.json(locations.rows);
+    } catch (error) {
+        console.error('Error fetching locations:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
+// Route to fetch transactions data
+app.get('/fetchTransactions', async (req, res) => {
+    try {
+        const transactions = await pool.query('SELECT * FROM transactions');
+        res.json(transactions.rows);
+    } catch (error) {
+        console.error('Error fetching transactions:', error);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 // User route
 app.get('/user', authenticateToken, async (req, res) => {
     const result = await pool.query('SELECT user_id, name, email, role FROM TVET_COLLEGE_ECOMMERCE.users WHERE user_id = $1', [req.user.userId]);
