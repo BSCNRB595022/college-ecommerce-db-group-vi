@@ -155,14 +155,14 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const renderTransactions = (transactions) => {
-        const transactionsTable = createTable(['Product Name', 'Quantity', 'Price', 'Total']);
+        const transactionsTable = createTable(['Transaction ID', 'Product ID', 'Product Quantity', 'Transaction TIme']);
 
         transactions.forEach(transaction => {
             const row = transactionsTable.insertRow();
-            row.insertCell().textContent = transaction.product_name;
-            row.insertCell().textContent = transaction.quantity;
-            row.insertCell().textContent = `$${transaction.price}`;
-            row.insertCell().textContent = `$${transaction.quantity * transaction.price}`;
+            row.insertCell().textContent = transaction.transaction_id;
+            row.insertCell().textContent = transaction.product_id;
+            row.insertCell().textContent = `$${transaction.quantity}`;
+            row.insertCell().textContent = `$${transaction.transaction_time}`;
         });
 
         contentContainer.appendChild(transactionsTable);
