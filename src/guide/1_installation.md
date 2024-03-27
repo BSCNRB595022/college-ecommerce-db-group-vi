@@ -29,7 +29,7 @@ git clone https://github.com/BSCNRB595022/college-ecommerce-db-group-vi/
 - Navigate to the cloned repository
 
 ```bash
-cd college-ecommerce-db-group-iv
+cd college-ecommerce-db-group-vi
 ```
 
 - Install the necessary packages using the following command. Note that [Node.js](https://nodejs.org/en/download/) is required for this step.
@@ -38,7 +38,7 @@ cd college-ecommerce-db-group-iv
 npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
 ```
 
-- If you are on windows machine, open the server-config file found in this location: `college-ecommerce-db-group-iv/src/web/server-config.js`
+- If you are on windows machine, open the server-config file found in this location: `college-ecommerce-db-group-vi/src/web/server-config.js`
 - Update the password to match your PostgreSQL database password. You can leave the other fields set to their default values unless you have made modifications to them in PostgreSQL. If you have made changes, be sure to update them here accordingly.
 
 - To quickly edit them through terminal (linux machines only), run this command:
@@ -46,6 +46,7 @@ npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
 ```bash
 nano src/web/server-config.js
 ```
+
 - Edit the file accordingly and then click `ctrl + x`, then `y` to save.
 
 ```js
@@ -66,7 +67,7 @@ options: '-c search_path=tvet_college_ecommerce'
 - Navigate to the repository folder
 
 ```bash
-cd Desktop/college-ecommerce-db-group-iv
+cd Desktop/college-ecommerce-db-group-vi
 ```
 
 - Start the server
@@ -83,30 +84,38 @@ node src/web/server
 localhost:3000/login/
 localhost:3000/register/
 ```
+
 - This will allow you to access the user dashboard,
 - To access the admin dashboard, go to step 5
 
 ### Step 5: Create an Admin account
 
 - To create an admin account, First navigate to the folder you download/cloned:
+
 ```bash
-cd Desktop/college-ecommerce-db-group-iv
+cd Desktop/college-ecommerce-db-group-vi
 ```
-- Next, navigate to the `src/web/` folder 
+
+- Next, navigate to the `src/web/` folder
+
 ```bash
 cd src/web
 ```
+
 - Next paste the command below, make sure to change email and password to your preferred credentials
+
 ```bash
 node create_admin_account.js "example_name" "example@email.com" "example_password" "admin"
 ```
 
 - Now, if you login using the above credentials to this url, you will be presented with admin dashboard
+
 ```
 localhost:3000/login/
 ```
 
 - The api is Documented here
+
 ```
 localhost:3000/api-docs/
 ```
