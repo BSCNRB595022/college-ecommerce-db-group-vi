@@ -7,7 +7,6 @@ $$ LANGUAGE plpgsql;
 
 CREATE TABLE transactions (
   transaction_id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(user_id),
   product_id INTEGER REFERENCES products(product_id),
   quantity INTEGER,
   transaction_time TIMESTAMP DEFAULT NOW()
