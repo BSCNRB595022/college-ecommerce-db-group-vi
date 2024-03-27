@@ -1,4 +1,4 @@
-# College eCommerce Group IV
+# College eCommerce Group VI
 
 This repository contains the database design and implementation for an eCommerce platform for a Technical and Vocational Education and Training (TVET) college in Machakos County, Kenya. The platform aims to provide an online presence and marketplace for the college's various entrepreneurial activities, including cafeterias, tuck shops, pharmacies, bookshops, and digital centers across its five locations.
 
@@ -33,4 +33,3 @@ The report also addresses the transactional management requirements of the syste
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
