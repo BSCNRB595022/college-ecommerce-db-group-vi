@@ -23,7 +23,7 @@ cd Desktop
 - Clone the repository
 
 ```bash
-git clone https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/
+git clone https://github.com/BSCNRB595022/college-ecommerce-db-group-vi/
 ```
 
 - Navigate to the cloned repository
@@ -58,7 +58,7 @@ options: '-c search_path=tvet_college_ecommerce'
 
 ### Step 2: Creating the Database by Following the instructions file.
 
-- Refer to the [instructions provided in this link](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/guide/2_db_creation.md) to create a database.
+- Refer to the [instructions provided in this link](https://github.com/BSCNRB595022/college-ecommerce-db-group-vi/blob/main/src/guide/2_db_creation.md) to create a database.
 
 ### Step 3: Start the Server and navigate to the webapp's dashboard
 
