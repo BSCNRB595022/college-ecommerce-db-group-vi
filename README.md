@@ -4,7 +4,7 @@ This repository contains the database design and implementation for an eCommerce
 
 ## Installation and Usage Guide
 
-Please refer to the [INSTALLATION GUIDE](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/guide/1_installation.md)
+Please refer to the [INSTALLATION GUIDE](https://github.com/BSCNRB595022/college-ecommerce-db-group-vi/blob/main/src/guide/1_installation.md)
 for a detailed step by step instructions on how to setup this database.
 
 ## Project Background
