@@ -5,9 +5,14 @@ const swaggerDocument = require('./swagger.json');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 const bcrypt = require('bcrypt');
+const config = require('./server-config');
 
 const pool = new Pool({
-    connectionString: 'postgresql://postgres:38877@localhost/tvet_college?options=-c%20search_path%3Dtvet_college_ecommerce'
+    user: config.db.user,
+    host: config.db.host,
+    database: config.db.database,
+    password: config.db.password,
+    options: config.db.options
 });
 
 const app = express();
