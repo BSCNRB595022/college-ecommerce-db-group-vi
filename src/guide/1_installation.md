@@ -38,7 +38,15 @@ cd college-ecommerce-db-group-iv
 npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
 ```
 
-- Edit the file found in `/src/web/server-config.js`. to match your database fields, especially the password feild. the rest can remain the default.
+- Edit the file found in `/src/web/server-config.js`. to match your database fields.
+- To quickly edit them through cmd/terminal, run this command:
+
+```bash
+/src/web/server-config.js
+```
+- You will find this section when you run the above command. 
+- Update the password to match your PostgreSQL database password. You can leave the other fields set to their default values unless you have made modifications to them in PostgreSQL. If you have made changes, be sure to update them here accordingly.
+
 ```js
 user: 'postgres',
 host: 'localhost',
