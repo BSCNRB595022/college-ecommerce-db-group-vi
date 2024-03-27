@@ -40,12 +40,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Get the JWT token from localStorage or cookies
             const token = localStorage.getItem('token');
-
+            // Check if the user is authenticated
+            if (!token) {
+                window.location.href = '/login'; // Redirect to login page if not authenticated
+                return;
+            }
             const response = await fetch(`/${tabId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}`
                 }
             });
+            if (response.status === 401) {
+                window.location.href = '/login'; // Redirect to login page if not authenticated
+                return;
+            }
             const data = await response.json();
 
             contentContainer.innerHTML = '';
