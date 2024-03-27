@@ -4,7 +4,18 @@ To set up the database, please follow the instructions below:
 
 1. **Open PostgreSQL**: Click the 'Windows/Start' button on your keyboard and search for `psql`. This command will only work if you have Postgres installed. If you haven't installed it yet, you can download it from [here](https://www.postgresql.org/download/).
 
-2. **Skip Initial Settings**: When it asks for 'Server', 'Database', 'Port', 'Username', you can simply hit enter to skip these.
+    LINUX ONLY SECTION:
+    - If you using linux machine, open terminal, paste this command
+    ```bash
+    sudo -i -u postgres
+    ```
+    - Enter your sudo password.
+    - then type this command to launch postgreSQL:
+    ```bash
+    psql
+    ```
+
+2. **Skip Initial Settings**: If it asks for 'Server', 'Database', 'Port', 'Username', you can simply hit enter to skip these.
 
 3. **Input Password**: When it asks for a password, input the password you used when installing Postgres.
 
