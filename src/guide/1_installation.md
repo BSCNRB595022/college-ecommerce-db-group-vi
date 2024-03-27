@@ -38,6 +38,14 @@ cd college-ecommerce-db-group-iv
 npm install bcrypt express jsonwebtoken pg swagger-ui-express swagger
 ```
 
+- Edit the file found in `/src/web/server-config.js`. to match your database fields, especially the password feild. the rest can remain the default.
+```js
+user: 'postgres',
+host: 'localhost',
+database: 'tvet_college',
+password: '38877',
+options: '-c search_path=tvet_college_ecommerce'
+```
 ### Step 2: Creating the Database by Following the instructions file.
 
 - Refer to the [instructions provided in this link](https://github.com/BSCNRB595022/college-ecommerce-db-group-iv/blob/main/src/guide/2_db_creation.md) to create a database.
