@@ -32,4 +32,4 @@ The report also addresses the transactional management requirements of the syste
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE)
