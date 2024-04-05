@@ -365,7 +365,7 @@ app.post('/checkout', authenticateToken, async (req, res) => {
 
 // Serve the login.html file for the root URL
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'login', 'login.html'));
+    res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
 
 app.listen(3000, () => {
